@@ -27,7 +27,7 @@ while ($data = mysqli_fetch_array($run)) {
 
 
 
-// loops
+
 // if($data)
 
 
