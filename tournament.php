@@ -1,3 +1,47 @@
+<?php
+@include 'config.php';
+
+session_start();  
+
+// if(!isset($_SESSION['admin_name']))
+// {
+//     header('location:login_form.php');
+// }
+// $name = mysqli_real_escape_string($conn, $_POST['name']);
+
+
+$conn = mysqli_connect('localhost','root','','user_db');
+
+
+
+$query="SELECT name FROM user_form";
+$run=mysqli_query($conn,$query);
+// $data= mysqli_fetch_array($run);
+
+
+while ($data = mysqli_fetch_array($run)) {
+    $name = $data['name'];
+    // echo "Name: $name<br>";
+ }
+
+
+
+
+
+// if($data)
+
+
+// if(!isset($_SESSION['admin_name']))
+// {
+//     header('location:user_page.php');
+// }
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +85,7 @@
             <div class="Match">
             <div class="Object_1"> <!--Part 3: Name of player & Result 4x of this in this branch-->
 
-                <div><input type="text" id="Player1" class="Name" placeholder="Player1"></div>  <!--Part 4: Name of player 8x of this in this branch-->
+                <div><input type="text" id="Player1" class="Name" placeholder="Player1" value=" <?php echo $name ?>"></div>  <!--Part 4: Name of player 8x of this in this branch-->
 
                 <div> <!--Part 4: Results 8x of this-->
                 <form name="FormId1" class="Result">
