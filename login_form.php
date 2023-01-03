@@ -62,7 +62,7 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>register form</title>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
@@ -77,7 +77,10 @@ if(isset($_POST['submit'])){
         };
         ?>
         <input type="email" name="email" placeholder="Enter Your Email" required>
-        <input type="password" name="password"placeholder="Enter Your Password" required>
+        <div id="type_pass">
+          <input type="password" id="password" name="password"placeholder="Enter Your Password" required >
+        <span id="toggleBtn"><i class="fa-solid fa-eye"></i></span>
+       </div>
        
         <input type="submit" name="submit" value="Login Now" class="form-btn">
         <p>don't heve an account? <a href="register_form.php">Register Now</a></p>
@@ -94,7 +97,21 @@ if(isset($_POST['submit'])){
 
 
 
+<script>
 
+
+    var pass = document.getElementById('password');
+    var togglebtn = document.getElementById('toggleBtn');
+
+    togglebtn.onclick = function(){
+        if (pass.type === 'password'){
+            pass.setAttribute('type', 'text');
+        } else {
+            pass.setAttribute('type', 'password');   
+        }
+    }
+
+</script>
 
 
 

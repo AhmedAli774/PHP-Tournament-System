@@ -385,7 +385,18 @@ input{
     top: 340px;
     left: 1105px;
 }
-
+#toggleBtn{
+    /* content: '\f06e'; */
+    /* font-family: fontAwesome; */
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 500px;
+    top: 10px;
+}
+#type_pass{
+ position: relative;
+}
 
 
 
